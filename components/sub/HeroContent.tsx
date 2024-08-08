@@ -24,41 +24,46 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Gestión de Divisas Empresariales
+            Gestión Inteligente de Divisas
           </h1>
         </motion.div>
+
         <motion.div
           variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Domina el mercado de
+            Optimiza tus
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              divisas
+              {" "}
+              operaciones{" "}
             </span>
-            con confianza
+            cambiarias
           </span>
         </motion.div>
+
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          FXperto te proporciona las herramientas y análisis en tiempo real para tomar decisiones inteligentes en tus operaciones de divisas.
+          Plataforma líder en análisis y gestión de divisas para empresas. 
+          Obtén datos en tiempo real, alertas inteligentes y asesoría experta para maximizar tus resultados.
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Comienza Ahora
+          ¡Comienza Ahora!
         </motion.a>
       </div>
+
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center"
       >
         <Image
           src="/mainIconsdark.svg"
-          alt="work icons"
+          alt="FXperto icons"
           height={650}
           width={650}
         />

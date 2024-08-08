@@ -1,27 +1,52 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Points, PointMaterial, Preload } from "@react-three/drei";
+// @ts-ignore
+import * as random from "maath/random/dist/maath-random.esm";
 
-const StarBackground = () => {
-  return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden z-0">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black" />
-      <div className="absolute inset-0">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full animate-twinkle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          />
-        ))}
-      </div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent" />
-    </div>
+const StarBackground = (props: any) => {
+  const ref: any = useRef();
+  const [sphere] = useState(() =>
+    random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
+
+  useFrame((state, delta) => {
+    ref.current.rotation.x -= delta/10;
+    ref.current.rotation.y -= delta/15;
+  })
+
+
+  return (
+    <group rotation={[0,0, Math.PI / 4]}>
+        <Points
+        ref={ref}
+        positions={sphere}
+        stride={3}
+        frustumCulled
+        {...props}
+        >
+            <PointMaterial
+                transparent
+                color="$fff"
+                size={0.002}
+                sizeAttenuation={true}
+                dethWrite={false}
+            />
+        </Points>
+    </group>
+  )
 };
 
-export default StarBackground;
+const StarsCanvas = () => (
+    <div className="w-full h-auto fixed inset-0 z-[20]">
+        <Canvas camera={{position: [0, 0, 1]}}>
+        <Suspense fallback={null}>
+            <StarBackground />
+        </Suspense>
+        </Canvas>
+    </div>
+)
+
+export default StarsCanvas;
