@@ -18,8 +18,8 @@ const config: Config = {
       },
       keyframes: {
         twinkle: {
-          '0%, 100%': { opacity: 0.2 },
-          '50%': { opacity: 1 },
+          '0%, 100%': { opacity: '0.2' },
+          '50%': { opacity: '1' },
         },
       },
     },
