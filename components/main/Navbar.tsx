@@ -1,46 +1,96 @@
-import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
-  return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
-      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-        <a
-          href="#home"
-          className="h-auto w-auto flex flex-row items-center"
-        >
-          <span className="font-bold text-2xl text-white">
-            FXperto
-          </span>
-        </a>
+  const [isOpen, setIsOpen] = React.useState(false);
 
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <a href="#home" className="cursor-pointer">
-              Inicio
-            </a>
-            <a href="#features" className="cursor-pointer">
-              Características
-            </a>
-            <a href="#why-fxperto" className="cursor-pointer">
-              ¿Por qué FXperto?
-            </a>
-            <a href="#contact" className="cursor-pointer">
-              Contacto
-            </a>
+  const menuItems = [
+    { name: "Inicio", href: "#" },
+    { name: "Características", href: "#features" },
+    { name: "¿Por qué FXperto?", href: "#why-fxperto" },
+    { name: "Contacto", href: "#contact" },
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030014]/80 backdrop-blur-md border-b border-[#7042f88b]">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <motion.div
+            variants={slideInFromLeft(0.5)}
+            className="flex-shrink-0"
+          >
+            <Link href="/" className="text-white text-xl font-bold">
+              FXperto
+            </Link>
+          </motion.div>
+
+          {/* Desktop Menu */}
+          <motion.div
+            variants={slideInFromRight(0.5)}
+            className="hidden md:block"
+          >
+            <div className="ml-10 flex items-baseline space-x-4">
+              {menuItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href.replace("#", ""))}
+                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-300 hover:text-white focus:outline-none"
+            >
+              {isOpen ? (
+                <XMarkIcon className="h-6 w-6" />
+              ) : (
+                <Bars3Icon className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
-
-        <div className="flex flex-row gap-5">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-all">
-            Iniciar Sesión
-          </button>
-          <button className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-2 px-4 rounded-full transition-all">
-            Registrarse
-          </button>
-        </div>
       </div>
-    </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden bg-[#030014] border-b border-[#7042f88b]"
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {menuItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href.replace("#", ""))}
+                className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </nav>
   );
 };
 
