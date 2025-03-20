@@ -8,13 +8,18 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        twinkle: 'twinkle 3s ease-in-out infinite',
+        "spin-slow": "spin 8s linear infinite",
+        "twinkle": "twinkle 3s ease-in-out infinite",
       },
       keyframes: {
         twinkle: {
-          '0%, 100%': { opacity: '0.2' },
-          '50%': { opacity: '1' },
+          "0%, 100%": { opacity: "0.2" },
+          "50%": { opacity: "1" },
         },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
