@@ -8,7 +8,6 @@ import {
   slideInFromTop,
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-
 import Image from "next/image";
 
 const HeroContent = () => {
@@ -25,7 +24,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Estudio de Tatuajes
+            Gestión de Divisas Empresariales
           </h1>
         </motion.div>
         <motion.div
@@ -33,24 +32,24 @@ const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Creando
+            Domina el mercado de
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              arte en tu piel
+              divisas
             </span>
-            con pasión
+            con confianza
           </span>
         </motion.div>
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Somos artistas del tatuaje con experiencia en diversos estilos. ¡Explora nuestros trabajos y servicios!
+          FXperto te proporciona las herramientas y análisis en tiempo real para tomar decisiones inteligentes en tus operaciones de divisas.
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          ¡Contáctanos!
+          Comienza Ahora
         </motion.a>
       </div>
       <motion.div
