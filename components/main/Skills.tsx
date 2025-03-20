@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Backend_skill,
   Frontend_skill,
@@ -8,6 +10,8 @@ import {
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
+import { motion } from "framer-motion";
+import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
 
 const Skills = () => {
   return (
