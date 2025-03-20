@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
 const Contact = () => {
