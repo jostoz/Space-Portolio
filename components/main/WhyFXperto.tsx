@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
 import { ChartBarIcon, ShieldCheckIcon, UserGroupIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 
 const WhyFXperto = () => {
