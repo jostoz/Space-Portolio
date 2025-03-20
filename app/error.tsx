@@ -6,27 +6,48 @@ export default function Error({
   error,
   reset,
 }: {
-  error: Error & { digest?: string };
-  reset: () => void;
+  error: Error
+  reset: () => void
 }) {
   useEffect(() => {
     console.error(error);
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#030014] text-white">
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
-        Algo salió mal
-      </h1>
-      <p className="text-gray-400 text-lg mb-8">
-        Lo sentimos, ha ocurrido un error inesperado.
-      </p>
+    <div style={{ 
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '100vh',
+      backgroundColor: '#030014',
+      color: 'white',
+      textAlign: 'center'
+    }}>
+      <h2 style={{
+        fontSize: '40px',
+        background: 'linear-gradient(to right, #9333ea, #06b6d4)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent'
+      }}>Algo salió mal</h2>
+      <p style={{
+        color: '#9ca3af',
+        marginBottom: '2rem'
+      }}>Lo sentimos, ha ocurrido un error.</p>
       <button
-        onClick={reset}
-        className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium hover:opacity-90 transition-opacity"
+        onClick={() => reset()}
+        style={{
+          padding: '0.75rem 1.5rem',
+          borderRadius: '9999px',
+          background: 'linear-gradient(to right, #9333ea, #06b6d4)',
+          color: 'white',
+          fontWeight: '500',
+          border: 'none',
+          cursor: 'pointer'
+        }}
       >
         Intentar de nuevo
       </button>
     </div>
-  );
+  )
 } 
