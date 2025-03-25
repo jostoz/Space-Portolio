@@ -12,7 +12,7 @@ const Navbar = () => {
   const menuItems = [
     { name: "Inicio", href: "#" },
     { name: "Características", href: "#features" },
-    { name: "¿Por qué FXperto?", href: "#why-fxperto" },
+    { name: "¿Por qué TutorAI?", href: "#why-tutorai" },
     { name: "Contacto", href: "#contact" },
   ];
 
@@ -33,7 +33,7 @@ const Navbar = () => {
             className="flex-shrink-0"
           >
             <Link href="/" className="text-white text-xl font-bold">
-              FXperto
+              TutorAI
             </Link>
           </motion.div>
 

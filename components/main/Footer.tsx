@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
         
         <div className="mb-[20px] text-[15px] text-center">
-          &copy; FXperto 2024. Todos los derechos reservados.
+          &copy; TutorAI 2024. Todos los derechos reservados.
         </div>
       </div>
     </div>
