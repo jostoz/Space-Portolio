@@ -1,21 +1,26 @@
 "use client";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
-import { ChartBarIcon, ShieldCheckIcon, UserGroupIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import { 
+  ChatBubbleBottomCenterTextIcon,
+  DevicePhoneMobileIcon,
+  ArrowsRightLeftIcon,
+  ClockIcon
+} from "@heroicons/react/24/outline";
 
-const WhyFXperto = () => {
+const WhyTutorAI = () => {
   return (
-    <section id="why-fxperto" className="py-20 bg-[#030014]">
+    <section id="why-tutorai" className="py-20 bg-[#030014]">
       <div className="container mx-auto px-4">
         <motion.div
           variants={slideInFromTop}
           className="text-center mb-16"
         >
           <h2 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
-            ¿Por qué FXperto?
+            ¿Por qué TutorAI?
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Descubre las ventajas que nos hacen líderes en gestión de divisas
+            Descubre las ventajas de nuestro tutor inteligente
           </p>
         </motion.div>
 
@@ -24,10 +29,10 @@ const WhyFXperto = () => {
             variants={slideInFromLeft(0.5)}
             className="bg-[#0300145e] p-6 rounded-lg border border-[#7042f88b]"
           >
-            <ChartBarIcon className="w-12 h-12 text-blue-500 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">Análisis Avanzado</h3>
+            <ChatBubbleBottomCenterTextIcon className="w-12 h-12 text-blue-500 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-2">Respuestas Empáticas</h3>
             <p className="text-gray-400">
-              Herramientas de análisis técnico y fundamental para decisiones informadas
+              IA que comprende y responde a tus emociones y necesidades
             </p>
           </motion.div>
 
@@ -35,10 +40,10 @@ const WhyFXperto = () => {
             variants={slideInFromLeft(0.7)}
             className="bg-[#0300145e] p-6 rounded-lg border border-[#7042f88b]"
           >
-            <ShieldCheckIcon className="w-12 h-12 text-blue-500 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">Seguridad Garantizada</h3>
+            <DevicePhoneMobileIcon className="w-12 h-12 text-blue-500 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-2">Multi-canal</h3>
             <p className="text-gray-400">
-              Protección de datos y transacciones con tecnología de última generación
+              Disponible en voz, texto y video según tus preferencias
             </p>
           </motion.div>
 
@@ -46,10 +51,10 @@ const WhyFXperto = () => {
             variants={slideInFromRight(0.7)}
             className="bg-[#0300145e] p-6 rounded-lg border border-[#7042f88b]"
           >
-            <UserGroupIcon className="w-12 h-12 text-blue-500 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">Equipo Experto</h3>
+            <ArrowsRightLeftIcon className="w-12 h-12 text-blue-500 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-2">Adaptativo</h3>
             <p className="text-gray-400">
-              Asesoramiento personalizado de profesionales con años de experiencia
+              Ajusta su enseñanza a tu ritmo y estilo de aprendizaje
             </p>
           </motion.div>
 
@@ -57,10 +62,10 @@ const WhyFXperto = () => {
             variants={slideInFromRight(0.5)}
             className="bg-[#0300145e] p-6 rounded-lg border border-[#7042f88b]"
           >
-            <CurrencyDollarIcon className="w-12 h-12 text-blue-500 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">ROI Comprobado</h3>
+            <ClockIcon className="w-12 h-12 text-blue-500 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-2">Soporte 24/7</h3>
             <p className="text-gray-400">
-              Resultados medibles y optimización continua de estrategias
+              Asistencia constante cuando la necesites, día y noche
             </p>
           </motion.div>
         </div>
@@ -69,4 +74,4 @@ const WhyFXperto = () => {
   );
 };
 
-export default WhyFXperto; 
+export default WhyTutorAI;
