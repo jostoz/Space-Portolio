@@ -88,7 +88,7 @@ const Skills = () => {
             loop
             muted
             autoPlay
-            src="/cards-video.webm"
+            src="/blackhole.webm"
           />
         </div>
       </div>

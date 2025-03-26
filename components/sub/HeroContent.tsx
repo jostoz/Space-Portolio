@@ -24,7 +24,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Plataforma Empresarial FX
+            Tutor AI para Estudiantes
           </h1>
         </motion.div>
 
@@ -33,12 +33,12 @@ const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Soluciones
+            Aprendizaje
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
-              Financieras{" "}
+              Personalizado{" "}
             </span>
-            Avanzadas
+            con IA
           </span>
         </motion.div>
 
@@ -46,14 +46,14 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Transforme su gestión de divisas con tecnología de vanguardia. 
-          Análisis predictivo, automatización inteligente y estrategias personalizadas para optimizar su exposición cambiaria.
+          Transforma tu experiencia de aprendizaje con un tutor virtual inteligente.
+          Explicaciones adaptativas, ejercicios personalizados y seguimiento continuo para dominar cualquier materia.
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Solicitar Demo
+          Probar Ahora
         </motion.a>
       </div>
 

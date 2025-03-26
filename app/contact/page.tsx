@@ -30,7 +30,7 @@ export default function Contact() {
                   <EnvelopeIcon className="w-6 h-6 text-blue-500" />
                   <div>
                     <h3 className="text-white font-medium">Email</h3>
-                    <p className="text-gray-400">contacto@fxperto.com</p>
+                    <p className="text-gray-400">contacto@tutoriai.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -101,4 +101,4 @@ export default function Contact() {
       </div>
     </main>
   );
-} 
+}
