@@ -20,14 +20,14 @@ export default function Features() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
             <motion.div
               variants={slideInFromLeft(0.5)}
-              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b]"
+              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b] h-full min-h-[350px] flex flex-col"
             >
               <BookOpenIcon className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Aprendizaje Adaptativo</h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 flex-grow">
                 El contenido se ajusta automáticamente a tu nivel de conocimiento.
                 Avanza a tu propio ritmo con lecciones que evolucionan contigo.
               </p>
@@ -35,11 +35,11 @@ export default function Features() {
 
             <motion.div
               variants={slideInFromRight(0.5)}
-              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b]"
+              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b] h-full min-h-[350px] flex flex-col"
             >
               <AcademicCapIcon className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Explicaciones Paso a Paso</h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 flex-grow">
                 Soluciones detalladas para cada problema, con conceptos claros y ejemplos prácticos.
                 Aprende no solo el qué, sino también el porqué.
               </p>
@@ -47,11 +47,11 @@ export default function Features() {
 
             <motion.div
               variants={slideInFromLeft(0.7)}
-              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b]"
+              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b] h-full min-h-[350px] flex flex-col"
             >
               <PuzzlePieceIcon className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Ejercicios Personalizados</h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 flex-grow">
                 Practica con problemas diseñados específicamente para tus áreas de mejora.
                 Refuerza los conceptos que más necesitas trabajar.
               </p>
@@ -59,11 +59,11 @@ export default function Features() {
 
             <motion.div
               variants={slideInFromRight(0.7)}
-              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b]"
+              className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b] h-full min-h-[350px] flex flex-col"
             >
               <ChartBarIcon className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Seguimiento de Progreso</h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 flex-grow">
                 Visualiza tu evolución con estadísticas detalladas y gráficos interactivos.
                 Identifica tus fortalezas y áreas de oportunidad.
               </p>
