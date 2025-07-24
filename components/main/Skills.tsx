@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  AI_ML_skills,
   Backend_skill,
   Frontend_skill,
   Full_stack,
@@ -22,6 +23,36 @@ const Skills = () => {
     >
       <SkillText />
 
+      {/* AI & Machine Learning Skills */}
+      <motion.div
+        variants={slideInFromTop}
+        className="text-center mb-4"
+      >
+        <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+          AI & Machine Learning
+        </h3>
+      </motion.div>
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+        {AI_ML_skills.map((skill, index) => (
+          <SkillDataProvider
+            key={index}
+            src={skill.Image}
+            width={skill.width}
+            height={skill.height}
+            index={index}
+          />
+        ))}
+      </div>
+
+      {/* Languages & Core Technologies */}
+      <motion.div
+        variants={slideInFromTop}
+        className="text-center mb-4 mt-12"
+      >
+        <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+          Languages & Core Technologies
+        </h3>
+      </motion.div>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Skill_data.map((image, index) => (
           <SkillDataProvider

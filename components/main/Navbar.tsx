@@ -10,11 +10,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const menuItems = [
-    { name: "Inicio", href: "#" },
-    { name: "Características", href: "#features" },
+    { name: "Home", href: "#" },
+    { name: "Skills", href: "#skills" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "¿Por qué TutorAI?", href: "#why-tutorai" },
-    { name: "Contacto", href: "#contact" },
+    { name: "Highlights", href: "#highlights" },
+    { name: "Achievements", href: "#achievements" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -34,7 +35,7 @@ const Navbar = () => {
             className="flex-shrink-0"
           >
             <Link href="/" className="text-white text-xl font-bold">
-              TutorAI
+              Josué Tostado
             </Link>
           </motion.div>
 

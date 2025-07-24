@@ -1,3 +1,42 @@
+export const AI_ML_skills = [
+  {
+    Image: "/python-logo.png",
+    name: "Python",
+    width: 80,
+    height: 80,
+  },
+  {
+    Image: "/tensorflow-logo.png", 
+    name: "TensorFlow",
+    width: 80,
+    height: 80,
+  },
+  {
+    Image: "/pytorch-logo.png",
+    name: "PyTorch", 
+    width: 80,
+    height: 80,
+  },
+  {
+    Image: "/langchain-logo.png",
+    name: "LangChain",
+    width: 80,
+    height: 80,
+  },
+  {
+    Image: "/openai-logo.png",
+    name: "OpenAI GPT-4",
+    width: 80,
+    height: 80,
+  },
+  {
+    Image: "/huggingface-logo.png",
+    name: "Hugging Face",
+    width: 80,
+    height: 80,
+  },
+];
+
 export const Backend_skill = [
   {
     Image: "/express.png",

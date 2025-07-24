@@ -24,7 +24,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Tutor AI para Estudiantes
+            Senior AI Engineer & ML Specialist 🤖
           </h1>
         </motion.div>
 
@@ -33,12 +33,12 @@ const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Aprendizaje
+            Hi, I'm
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
-              Personalizado{" "}
+              Josué Tostado{" "}
             </span>
-            con IA
+            👋
           </span>
         </motion.div>
 
@@ -46,15 +46,45 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Transforma tu experiencia de aprendizaje con un tutor virtual inteligente.
-          Explicaciones adaptativas, ejercicios personalizados y seguimiento continuo para dominar cualquier materia.
+          Accomplished AI engineer with 10+ years building intelligent systems that transform businesses. 
+          Currently architecting cutting-edge AI educational platforms at Fxperto/Educare Tech.
         </motion.p>
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+        
+        <motion.div
+          variants={slideInFromLeft(0.9)}
+          className="flex flex-wrap gap-4 mb-5"
         >
-          Probar Ahora
-        </motion.a>
+          <div className="flex items-center gap-2 text-sm text-gray-300">
+            <span className="text-purple-500">🎯</span>
+            Real-time Voice AI (50ms latency)
+          </div>
+          <div className="flex items-center gap-2 text-sm text-gray-300">
+            <span className="text-cyan-500">🧠</span>
+            LangChain & Agent Orchestration
+          </div>
+          <div className="flex items-center gap-2 text-sm text-gray-300">
+            <span className="text-green-500">📊</span>
+            Production Scale (1M+ transactions)
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={slideInFromLeft(1)}
+          className="flex gap-4"
+        >
+          <a
+            href="#contact"
+            className="py-2 px-6 button-primary text-center text-white cursor-pointer rounded-lg"
+          >
+            Contact Me
+          </a>
+          <a
+            href="#portfolio"
+            className="py-2 px-6 border border-[#7042f88b] text-center text-white cursor-pointer rounded-lg hover:bg-[#7042f88b] transition-all duration-300"
+          >
+            View Portfolio
+          </a>
+        </motion.div>
       </div>
 
       <motion.div

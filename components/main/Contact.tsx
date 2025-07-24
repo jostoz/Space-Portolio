@@ -34,10 +34,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
-            Contacto
+            Let's Connect!
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Estamos aquí para ayudarte a optimizar tu gestión de divisas
+            Ready to collaborate on AI/ML projects, voice AI applications, or innovative technology solutions
           </p>
         </motion.div>
 
@@ -47,28 +47,44 @@ const Contact = () => {
             className="bg-[#0300145e] p-8 rounded-lg border border-[#7042f88b]"
           >
             <h3 className="text-2xl font-bold text-white mb-6">
-              Información de Contacto
+              Contact Information
             </h3>
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <EnvelopeIcon className="w-6 h-6 text-blue-500 mt-1" />
+                <EnvelopeIcon className="w-6 h-6 text-purple-500 mt-1" />
                 <div>
                   <h4 className="text-white font-semibold">Email</h4>
-                  <p className="text-gray-400">contacto@fxperto.com</p>
+                  <p className="text-gray-400">josuedirecto@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <PhoneIcon className="w-6 h-6 text-blue-500 mt-1" />
+                <PhoneIcon className="w-6 h-6 text-cyan-500 mt-1" />
                 <div>
-                  <h4 className="text-white font-semibold">Teléfono</h4>
-                  <p className="text-gray-400">+34 900 123 456</p>
+                  <h4 className="text-white font-semibold">Phone</h4>
+                  <p className="text-gray-400">+52 442 156 0991</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <MapPinIcon className="w-6 h-6 text-blue-500 mt-1" />
+                <svg className="w-6 h-6 text-green-500 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                  <path d="M12 6.5c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5-1.119-2.5-2.5-2.5zm0 4c-.827 0-1.5-.673-1.5-1.5S11.173 7.5 12 7.5s1.5.673 1.5 1.5-.673 1.5-1.5 1.5z"/>
+                </svg>
                 <div>
-                  <h4 className="text-white font-semibold">Ubicación</h4>
-                  <p className="text-gray-400">Madrid, España</p>
+                  <h4 className="text-white font-semibold">Portfolio</h4>
+                  <a href="https://josuetostado.vercel.app" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">
+                    josuetostado.vercel.app
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <svg className="w-6 h-6 text-yellow-500 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                </svg>
+                <div>
+                  <h4 className="text-white font-semibold">Lablab.ai Profile</h4>
+                  <a href="https://lablab.ai/u/@joztos50" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300">
+                    @joztos50
+                  </a>
                 </div>
               </div>
             </div>
