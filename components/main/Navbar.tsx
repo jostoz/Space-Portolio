@@ -12,6 +12,7 @@ const Navbar = () => {
   const menuItems = [
     { name: "Inicio", href: "#" },
     { name: "Características", href: "#features" },
+    { name: "Portfolio", href: "#portfolio" },
     { name: "¿Por qué TutorAI?", href: "#why-tutorai" },
     { name: "Contacto", href: "#contact" },
   ];

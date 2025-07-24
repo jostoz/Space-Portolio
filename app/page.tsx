@@ -2,6 +2,7 @@
 import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
 import Projects from "@/components/main/Projects";
+import Portfolio from "@/components/main/Portfolio";
 import Skills from "@/components/main/Skills";
 import WhyTutorAI from "@/components/main/WhyTutorAI";
 import Contact from "@/components/main/Contact";
@@ -14,6 +15,7 @@ export default function Home() {
         <Skills />
         <Encryption />
         <Projects />
+        <Portfolio />
         <WhyTutorAI />
         <Contact />
       </div>
