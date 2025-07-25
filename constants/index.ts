@@ -241,7 +241,12 @@ export const projects = [
     description: "Sistema híbrido de voz con latencia de 50ms que combina respuestas instantáneas y análisis profundo. Arquitectura dual pipeline usando LiveKit y OpenAI Realtime API, reduciendo costos operativos en 40% mientras mantiene 95% de precisión en las respuestas.",
     tech: ["LiveKit", "OpenAI Realtime API", "WebRTC", "TypeScript"],
     metrics: ["50ms latencia", "40% reducción costos", "95% precisión"],
-    image: "/projects/ai-voice.png"
+    image: "/projects/ai-voice.png",
+    video: "/projects/ai-voice-demo.mp4",
+    category: "AI/ML",
+    featured: true,
+    github: "https://github.com/jostoz/ai-voice-platform",
+    demo: "https://ai-voice-demo.vercel.app"
   },
   {
     title: "🤖 Sistema Conversacional de Comercio Pre-ChatGPT",

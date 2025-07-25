@@ -8,8 +8,8 @@ import Footer from "@/components/main/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FXperto - Gestión de Divisas Empresariales",
-  description: "Plataforma líder en gestión de divisas para empresas",
+  title: "Josué Tostado - Senior AI Engineer",
+  description: "Portfolio of Josué Tostado - Senior AI Engineer & Machine Learning Specialist",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
         <StarsCanvas />
         <Navbar />

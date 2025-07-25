@@ -89,13 +89,74 @@ const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="w-full h-full flex justify-center items-center relative group"
       >
-        <Image
-          src="/mainIconsdark.svg"
-          alt="FXperto Enterprise Platform"
-          height={650}
-          width={650}
+        {/* Main image */}
+        <motion.div
+          whileHover={{ scale: 1.05, rotate: 5 }}
+          transition={{ duration: 0.3 }}
+          className="relative z-10"
+        >
+          <Image
+            src="/mainIconsdark.svg"
+            alt="AI Engineering Portfolio"
+            height={650}
+            width={650}
+            className="drop-shadow-2xl"
+          />
+        </motion.div>
+        
+        {/* Background video that plays on hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-full overflow-hidden">
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/blackhole.webm" type="video/webm" />
+          </video>
+        </div>
+        
+        {/* Animated particles around the image */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-3 h-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"
+              animate={{
+                x: [0, Math.cos(i * 60 * Math.PI / 180) * 300],
+                y: [0, Math.sin(i * 60 * Math.PI / 180) * 300],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: "easeInOut"
+              }}
+              style={{
+                left: '50%',
+                top: '50%',
+                transform: 'translate(-50%, -50%)'
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Glow effect on hover */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
         />
       </motion.div>
     </motion.div>

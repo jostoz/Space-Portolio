@@ -69,3 +69,62 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Advanced Swiper Styles */
+.advanced-swiper {
+  padding: 20px 0 60px 0;
+}
+
+.advanced-swiper .swiper-slide {
+  transition: all 0.3s ease;
+}
+
+.advanced-swiper .swiper-slide-active {
+  transform: scale(1.05);
+}
+
+.advanced-swiper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.advanced-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.advanced-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.advanced-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.advanced-swiper .swiper-pagination-bullet:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #7c3aed, #0891b2);
+}
