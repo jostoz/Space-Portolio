@@ -1,7 +1,7 @@
 "use client";
 import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
-import DynamicCarousel from "@/components/portfolio/DynamicCarousel";
+import SimpleCarousel from "@/components/portfolio/SimpleCarousel";
 import AnimatedSkills from "@/components/main/AnimatedSkills";
 import ProfessionalHighlights from "@/components/main/ProfessionalHighlights";
 import Achievements from "@/components/main/Achievements";
@@ -23,7 +23,7 @@ export default function Home() {
         </SectionTransition>
         
         <SectionTransition>
-          <DynamicCarousel />
+          <SimpleCarousel />
         </SectionTransition>
         
         <SectionTransition>
