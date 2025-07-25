@@ -1,6 +1,5 @@
 import { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from '@react-spring/web';
-import { gsap } from 'gsap';
 
 interface PhysicsConfig {
   friction: number;
@@ -25,13 +24,16 @@ export const usePhysics = (config: Partial<PhysicsConfig> = {}) => {
   const velocityX = useRef(velocity);
   const rafId = useRef<number>();
   const lastTime = useRef(Date.now());
+  const lastX = useRef(0);
+  const dragStartPosition = useRef(0);
 
   const [springProps, springApi] = useSpring(() => ({
     x: 0,
     config: {
       tension,
       friction: friction * 100,
-      mass
+      mass,
+      clamp: false
     }
   }));
 
@@ -68,8 +70,12 @@ export const usePhysics = (config: Partial<PhysicsConfig> = {}) => {
 
   const startDrag = useCallback((e: MouseEvent | TouchEvent) => {
     isDragging.current = true;
-    startX.current = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    startX.current = clientX;
+    dragStartPosition.current = currentX.current;
+    lastX.current = clientX;
     velocityX.current = 0;
+    lastTime.current = Date.now();
     cancelAnimationFrame(rafId.current!);
   }, []);
 
@@ -78,16 +84,18 @@ export const usePhysics = (config: Partial<PhysicsConfig> = {}) => {
 
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const deltaX = clientX - startX.current;
+    const newPosition = dragStartPosition.current + deltaX;
     
-    // Calculate velocity
+    // Calculate velocity based on movement
     const now = Date.now();
-    const deltaTime = (now - lastTime.current) / 1000;
-    if (deltaTime > 0) {
-      velocityX.current = (deltaX - currentX.current) / deltaTime / 60;
-    }
+    const deltaTime = Math.max((now - lastTime.current), 1);
+    const movementX = clientX - lastX.current;
+    velocityX.current = (movementX / deltaTime) * 16; // Normalize to ~60fps
+    
     lastTime.current = now;
-
-    currentX.current = deltaX;
+    lastX.current = clientX;
+    currentX.current = newPosition;
+    
     springApi.start({ x: currentX.current, immediate: true });
   }, [springApi]);
 
@@ -102,7 +110,8 @@ export const usePhysics = (config: Partial<PhysicsConfig> = {}) => {
   // Mouse wheel support
   const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();
-    velocityX.current += e.deltaY * 0.5;
+    const scrollSpeed = 0.5;
+    velocityX.current = -e.deltaY * scrollSpeed;
     if (!isDragging.current && !rafId.current) {
       rafId.current = requestAnimationFrame(updatePhysics);
     }

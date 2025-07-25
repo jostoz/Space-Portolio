@@ -70,22 +70,15 @@ const PhysicsCarousel = () => {
 
   // Drag handlers with enhanced interaction
   const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
     setIsDragging(true);
     startDrag(e.nativeEvent);
     document.body.style.cursor = 'grabbing';
-    
-    // Visual feedback
-    if (carouselRef.current) {
-      gsap.to(carouselRef.current, {
-        scale: 0.98,
-        duration: 0.2,
-        ease: "power2.out"
-      });
-    }
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (isDragging) {
+      e.preventDefault();
       updateDrag(e.nativeEvent);
     }
   };
@@ -95,15 +88,6 @@ const PhysicsCarousel = () => {
       setIsDragging(false);
       endDrag();
       document.body.style.cursor = 'default';
-      
-      // Visual feedback
-      if (carouselRef.current) {
-        gsap.to(carouselRef.current, {
-          scale: 1,
-          duration: 0.3,
-          ease: "back.out(1.7)"
-        });
-      }
     }
   };
 
@@ -197,11 +181,32 @@ const PhysicsCarousel = () => {
     container.addEventListener('wheel', handleWheel, { passive: false });
     document.addEventListener('keydown', handleKeyDown);
 
+    // Global mouse event listeners for drag
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        e.preventDefault();
+        updateDrag(e);
+      }
+    };
+
+    const handleGlobalMouseUp = () => {
+      if (isDragging) {
+        setIsDragging(false);
+        endDrag();
+        document.body.style.cursor = 'default';
+      }
+    };
+
+    document.addEventListener('mousemove', handleGlobalMouseMove);
+    document.addEventListener('mouseup', handleGlobalMouseUp);
+
     return () => {
       container.removeEventListener('wheel', handleWheel);
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousemove', handleGlobalMouseMove);
+      document.removeEventListener('mouseup', handleGlobalMouseUp);
     };
-  }, [handleWheel, currentIndex, filteredProjects.length]);
+  }, [handleWheel, currentIndex, filteredProjects.length, isDragging, updateDrag, endDrag]);
 
   // Reset on category change
   useEffect(() => {
@@ -293,23 +298,23 @@ const PhysicsCarousel = () => {
 
         {/* Physics Carousel */}
         <motion.div 
-          className="relative"
+          className="relative overflow-hidden mx-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <animated.div
-            ref={carouselRef}
-            style={springProps}
-            className="flex gap-8 cursor-grab active:cursor-grabbing select-none"
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
+          <div className="relative w-full overflow-visible px-8 py-4">
+            <animated.div
+              ref={carouselRef}
+              style={{
+                transform: springProps.x.to(x => `translate3d(${x}px, 0, 0)`),
+              }}
+              className={`flex gap-8 cursor-grab select-none touch-pan-y ${isDragging ? 'cursor-grabbing' : ''}`}
+              onMouseDown={handleMouseDown}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
             <AnimatePresence mode="wait">
               {filteredProjects.map((project, index) => (
                 <motion.div
@@ -334,7 +339,8 @@ const PhysicsCarousel = () => {
                 </motion.div>
               ))}
             </AnimatePresence>
-          </animated.div>
+            </animated.div>
+          </div>
 
           {/* Navigation indicators */}
           <motion.div 
